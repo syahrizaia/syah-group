@@ -5,8 +5,6 @@ import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-declare module "*.css";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
