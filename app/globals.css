@@ -1,26 +1,30 @@
 @import "tailwindcss";
 
+/* Mengatur Tema Kustom untuk Syah Group (Pengganti tailwind.config.ts) */
+@theme {
+  /* Warna Kustom */
+  --color-navy-800: #111827;
+  --color-navy-900: #0a0f1d;
+  
+  --color-gold-500: #d4af37;
+  --color-gold-600: #aa8c2c;
+  
+  --color-silver: #c0c0c0;
+
+  /* Font Kustom yang disinkronkan dengan layout.tsx */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-syne);
+}
+
+/* Base styling */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0a0f1d; /* navy-900 */
+  --foreground: #ffffff;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Kita tidak perlu lagi menulis font-family di sini karena 
+     sudah diatur oleh class 'font-sans' di layout.tsx */
 }
