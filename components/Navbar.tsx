@@ -38,12 +38,14 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
+      // Padding atas-bawah dikurangi untuk versi mobile (py-4 saat diam, py-2 saat scroll)
       className={`fixed top-0 left-0 right-0 z-50 flex flex-col items-center px-4 transition-all duration-500 ${
-        isScrolled ? "py-4" : "py-8"
+        isScrolled ? "py-2 md:py-4" : "py-4 md:py-8"
       }`}
     >
       <nav
-        className={`relative flex items-center justify-between w-full max-w-6xl px-6 md:px-8 py-4 rounded-full transition-all duration-500 ${
+        // Padding internal nav pill diperkecil di mobile (px-4 py-2.5) untuk kesan lebih slim
+        className={`relative flex items-center justify-between gap-6 w-fit max-w-6xl px-4 md:px-8 py-2.5 md:py-4 rounded-full transition-all duration-500 ${
           isScrolled || isMobileMenuOpen
             ? "bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
             : "bg-transparent border-transparent"
@@ -52,7 +54,8 @@ export default function Navbar() {
         {/* Logo */}
         <Link 
           href="/" 
-          className="text-2xl font-display font-bold text-white tracking-wide z-50"
+          // Ukuran teks logo diperkecil di mobile menjadi text-xl
+          className="text-xl md:text-2xl font-display font-bold text-white tracking-wide z-50 pr-6"
           onClick={closeMenu}
         >
           SYAH <span className="text-gold-500">GROUP</span>
@@ -97,11 +100,16 @@ export default function Navbar() {
         
         {/* Tombol Hamburger Menu (Mobile & Tablet) */}
         <button 
-          className="md:hidden text-white hover:text-gold-500 transition-colors z-50"
+          className="md:hidden text-white hover:text-gold-500 transition-colors z-50 flex items-center"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {/* Ukuran ikon hamburger & close disesuaikan menggunakan utility class responsif (w-5 h-5 di mobile) */}
+          {isMobileMenuOpen ? (
+            <X className="w-5 h-5 md:w-7 md:h-7" />
+          ) : (
+            <Menu className="w-5 h-5 md:w-7 md:h-7" />
+          )}
         </button>
       </nav>
 
@@ -113,14 +121,16 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            // Posisi dropdown tepat di bawah navbar pill
-            className="absolute top-[80px] md:hidden w-[calc(100%-2rem)] max-w-md bg-navy-900/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl flex flex-col gap-6"
+            // top-[60px] agar pas dengan ketebalan baru nav pill mobile, radius rounded-2xl, gap-4, & padding p-5
+            className="absolute top-[60px] md:hidden w-fit max-w-md bg-navy-900/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 shadow-2xl flex flex-col gap-4"
           >
-            <ul className="flex flex-col gap-4 text-center">
+            {/* Jarak gap vertikal antar baris menu diturunkan */}
+            <ul className="flex flex-col gap-3.5 text-center">
               <li>
                 <Link 
                   href="/" 
-                  className="block text-lg font-medium text-white hover:text-gold-500 transition-colors"
+                  // Ukuran font teks menu dropdown diubah menjadi text-base agar lebih fit
+                  className="block text-base font-medium text-white hover:text-gold-500 transition-colors"
                   onClick={closeMenu}
                 >
                   Beranda
@@ -129,7 +139,7 @@ export default function Navbar() {
               <li>
                 <Link 
                   href="/about" 
-                  className="block text-lg font-medium text-white hover:text-gold-500 transition-colors"
+                  className="block text-base font-medium text-white hover:text-gold-500 transition-colors"
                   onClick={closeMenu}
                 >
                   Tentang Kami
@@ -138,7 +148,7 @@ export default function Navbar() {
               <li>
                 <Link 
                   href="/business" 
-                  className="block text-lg font-medium text-white hover:text-gold-500 transition-colors"
+                  className="block text-base font-medium text-white hover:text-gold-500 transition-colors"
                   onClick={closeMenu}
                 >
                   Pilar Bisnis
@@ -147,7 +157,7 @@ export default function Navbar() {
               <li>
                 <Link 
                   href="/innovation" 
-                  className="block text-lg font-medium text-white hover:text-gold-500 transition-colors"
+                  className="block text-base font-medium text-white hover:text-gold-500 transition-colors"
                   onClick={closeMenu}
                 >
                   Inovasi
@@ -156,7 +166,7 @@ export default function Navbar() {
               <li>
                 <Link 
                   href="/careers" 
-                  className="block text-lg font-medium text-white hover:text-gold-500 transition-colors"
+                  className="block text-base font-medium text-white hover:text-gold-500 transition-colors"
                   onClick={closeMenu}
                 >
                   Karier
@@ -169,7 +179,8 @@ export default function Navbar() {
             <Link 
               href="/contact"
               onClick={closeMenu}
-              className="w-full py-3 text-center text-base font-bold text-navy-900 bg-gold-500 rounded-full hover:bg-gold-600 transition-colors"
+              // Padding tombol CTA diturunkan (py-2.5) dan font text-sm untuk tampilan mobile
+              className="w-full px-5 py-2.5 text-center text-sm font-bold text-navy-900 bg-gold-500 rounded-full hover:bg-gold-600 transition-colors"
             >
               Hubungi Kami
             </Link>

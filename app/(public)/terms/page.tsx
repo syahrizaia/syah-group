@@ -33,42 +33,54 @@ const terms = [
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen pt-32 pb-20">
-      <div className="max-w-4xl mx-auto px-6">
+    // Padding top & bottom disesuaikan untuk layar handphone (pt-24 pb-16)
+    <main className="min-h-screen pt-24 pb-16 md:pt-32 md:pb-20">
+      {/* Padding horizontal dioptimalkan untuk mobile (px-4) */}
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         
         {/* Header Section */}
+        {/* Jarak margin bawah diperkecil di mobile */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-16 text-center"
+          className="mb-10 md:mb-16 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-            <FileText size={16} className="text-gold-500" />
-            <span className="text-xs font-bold tracking-widest text-silver uppercase">Legal Disclosure</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4 md:mb-6">
+            <FileText size={14} className="text-gold-500" />
+            <span className="text-[10px] md:text-xs font-bold tracking-widest text-silver uppercase">Legal Disclosure</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
+          {/* Tipografi judul utama diperkecil menjadi text-2xl di mobile */}
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-3 md:mb-6">
             Syarat & <span className="text-gold-500">Ketentuan</span>
           </h1>
-          <p className="text-silver/60">Terakhir diperbarui: 30 Mei 2026</p>
+          {/* Ukuran subteks tanggal diperkecil */}
+          <p className="text-silver/60 text-xs md:text-sm">Terakhir diperbarui: 30 Mei 2026</p>
         </motion.div>
 
-        {/* Konten Utama */}
-        <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-12 rounded-[32px] space-y-10">
+        {/* Konten Utama (Glassmorphism Box) */}
+        {/* Padding (p-5 md:p-12) & radius sudut (rounded-2xl) disesuaikan untuk mobile */}
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 p-5 sm:p-8 md:p-12 rounded-2xl md:rounded-[32px] space-y-6 md:space-y-10">
           
           <div className="prose prose-invert max-w-none">
-            <p className="text-silver/80 leading-relaxed text-lg">
+            {/* Ukuran font paragraf pengantar diubah menjadi text-sm responsif */}
+            <p className="text-silver/80 leading-relaxed text-sm md:text-lg">
               Selamat datang di portal resmi Syah Group. Harap membaca dokumen ini dengan saksama sebelum melanjutkan aktivitas penelusuran atau interaksi bisnis dengan entitas kami.
             </p>
           </div>
 
-          <div className="space-y-8">
+          {/* Jarak gap vertikal antar baris kebijakan disesuaikan */}
+          <div className="space-y-6 md:space-y-8">
             {terms.map((term, idx) => (
-              <div key={idx} className="border-b border-white/5 pb-8 last:border-0 last:pb-0">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                  <CheckCircle2 className="text-gold-500 shrink-0" size={20} />
+              // Jarak padding bawah border list disesuaikan (pb-5 di mobile)
+              <div key={idx} className="border-b border-white/5 pb-5 md:pb-8 last:border-0 last:pb-0">
+                {/* Ukuran teks subjudul diubah menjadi text-base di mobile */}
+                <h3 className="text-base md:text-xl font-bold text-white mb-2 md:mb-4 flex items-center gap-2 md:gap-3">
+                  {/* Ukuran ikon indikator diatur menggunakan class Tailwind responsif */}
+                  <CheckCircle2 className="text-gold-500 shrink-0 w-4 h-4 md:w-5 md:h-5" />
                   {term.title}
                 </h3>
-                <p className="text-silver/80 leading-relaxed text-justify">
+                {/* Ukuran isi teks pasal diubah menjadi text-xs di mobile */}
+                <p className="text-silver/80 leading-relaxed text-xs md:text-base text-justify">
                   {term.content}
                 </p>
               </div>
@@ -76,21 +88,27 @@ export default function TermsPage() {
           </div>
         </div>
 
-        {/* Legal Alert */}
-        <div className="mt-12 p-6 bg-gold-500/10 border border-gold-500/20 rounded-2xl flex items-start gap-4">
-          <AlertTriangle className="text-gold-500 shrink-0 mt-1" size={24} />
-          <p className="text-silver/90 text-sm md:text-base">
+        {/* Legal Alert Banner */}
+        {/* Jarak margin (mt-8), padding (p-4), dan kelengkungan sudut (rounded-xl) dioptimalkan */}
+        <div className="mt-8 md:mt-12 p-4 md:p-6 bg-gold-500/10 border border-gold-500/20 rounded-xl md:rounded-2xl flex items-start gap-3 md:gap-4">
+          {/* Dimensi ikon segitiga peringatan responsif */}
+          <AlertTriangle className="text-gold-500 shrink-0 mt-0.5 md:mt-1 w-5 h-5 md:w-6 md:h-6" />
+          {/* Ukuran teks pemberitahuan hukum diubah menjadi text-xs di mobile */}
+          <p className="text-silver/90 text-xs md:text-base">
             <strong>Pemberitahuan Hukum:</strong> Jika Anda adalah mitra bisnis atau klien yang terikat dalam kontrak kerja sama (Service Level Agreement), ketentuan yang tertuang dalam dokumen kontrak fisik akan mengesampingkan Syarat & Ketentuan umum ini jika terjadi perbedaan interpretasi.
           </p>
         </div>
 
         {/* Navigation */}
-        <div className="mt-12 text-center">
+        {/* Jarak margin atas disesuaikan */}
+        <div className="mt-8 md:mt-12 text-center">
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-gold-500 hover:text-white transition-colors"
+            // Ukuran font teks kembali diubah menjadi text-xs di mobile
+            className="inline-flex items-center gap-1.5 md:gap-2 text-gold-500 hover:text-white text-xs md:text-sm transition-colors"
           >
-            <ArrowLeft size={18} /> Kembali ke Beranda
+            {/* Ukuran panah kembali responsif */}
+            <ArrowLeft className="w-4 h-4 md:w-[18px] md:h-[18px]" /> Kembali ke Beranda
           </Link>
         </div>
 
