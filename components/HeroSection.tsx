@@ -11,6 +11,8 @@ export default function HeroSection() {
           loop 
           muted 
           playsInline 
+          preload="auto"
+          aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover -z-10 mix-blend-overlay"
         >
           <source src="/hero-background.mp4" type="video/mp4" />

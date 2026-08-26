@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Scale, FileText, CheckCircle2, AlertTriangle, ArrowLeft } from "lucide-react";
+import { FileText, CheckCircle2, AlertTriangle, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 const terms = [

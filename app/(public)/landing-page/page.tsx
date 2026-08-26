@@ -1,7 +1,9 @@
 import HeroSection from "@/components/HeroSection";
-import BentoGrid from "@/components/BentoGrid";
-import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const BentoGrid = dynamic(() => import("@/components/BentoGrid"));
+const ContactForm = dynamic(() => import("@/components/ContactForm"));
 
 export default function LandingPage() {
   return (
