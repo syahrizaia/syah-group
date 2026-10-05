@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUp, Mail } from "lucide-react";
-import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { ArrowRight, ArrowUp, Mail } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -37,20 +36,9 @@ export default function Footer() {
             </Link>
             {/* Ukuran deskripsi menjadi text-xs di mobile */}
             <p className="text-silver/70 text-xs md:text-sm leading-relaxed max-w-sm">
-              Mendefinisikan ulang standar keunggulan melalui integrasi infrastruktur fisik, inovasi digital, dan kreasi visual tanpa batas.
+              Menghubungkan kekuatan industri, teknologi, dan kreativitas visual untuk membantu bisnis bergerak lebih maju.
             </p>
-            {/* Ikon Media Sosial */}
-            <div className="flex items-center gap-3 pt-1">
-              <a href="https://www.linkedin.com" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-silver hover:text-gold-500 hover:border-gold-500/50 hover:bg-gold-500/10 transition-all">
-                <FaLinkedin size={16} />
-              </a>
-              <a href="https://www.twitter.com" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-silver hover:text-gold-500 hover:border-gold-500/50 hover:bg-gold-500/10 transition-all">
-                <FaTwitter size={16} />
-              </a>
-              <a href="https://www.instagram.com" className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-silver hover:text-gold-500 hover:border-gold-500/50 hover:bg-gold-500/10 transition-all">
-                <FaInstagram size={16} />
-              </a>
-            </div>
+            <Link href="/business" className="group inline-flex items-center gap-2 pt-1 text-xs font-semibold text-slate-300 transition hover:text-white">Jelajahi ekosistem bisnis <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" /></Link>
           </div>
 
           {/* Kolom 2: Tautan Perusahaan (Berdampingan di mobile - col-span-1) */}
@@ -73,36 +61,20 @@ export default function Footer() {
             <ul className="space-y-3 md:space-y-4 text-silver/70 text-xs md:text-sm">
               <li><Link href="https://syahheavyequipment.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-gold-500 transition-colors">Syah Heavy Equipment</Link></li>
               <li><Link href="https://syahtech.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-gold-500 transition-colors">Syah Tech</Link></li>
-              <li><Link href="https://syahstudio.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-gold-500 transition-colors">Syah Studio</Link></li>
+              <li><Link href="https://syahstudio.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-300 transition-colors">Syah Studio</Link></li>
             </ul>
           </div>
 
           {/* Kolom 4: Newsletter (Mengambil full 2 kolom kembali di mobile) */}
           <div className="col-span-2 lg:col-span-3">
-            <h4 className="text-white font-bold tracking-wider uppercase mb-4 md:mb-6 text-xs md:text-sm">Investor Relations</h4>
-            <p className="text-silver/70 text-xs md:text-sm mb-4">
-              Dapatkan pembaruan kuartalan mengenai ekspansi bisnis dan inovasi teknologi kami.
+            <h4 className="text-white font-bold tracking-wider uppercase mb-4 md:mb-6 text-xs md:text-sm">Kantor Grup</h4>
+            <p className="text-silver/70 text-xs md:text-sm mb-5 leading-relaxed">
+              Untuk kemitraan, kebutuhan layanan, atau pertanyaan umum, hubungi tim Syah Group.
             </p>
-            <form className="relative" onSubmit={(e) => e.preventDefault()}>
-              {/* Posisi icon disesuaikan dengan tinggi input baru */}
-              <div className="absolute inset-y-0 left-3.5 md:left-4 flex items-center pointer-events-none">
-                <Mail size={14} className="text-silver/50" />
-              </div>
-              {/* Padding input disesuaikan agar tidak terlalu bulky di mobile */}
-              <input 
-                type="email" 
-                placeholder="Alamat Email Bisnis" 
-                className="w-full bg-white/5 border border-white/10 rounded-full py-2.5 pl-10 pr-20 md:py-3 md:pl-12 md:pr-24 text-xs md:text-sm text-white placeholder:text-silver/50 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 transition-all"
-                required
-              />
-              {/* Padding & posisi tombol disesuaikan */}
-              <button 
-                type="submit" 
-                className="absolute right-1 top-1 bottom-1 px-3 md:px-4 bg-gold-500 hover:bg-gold-600 text-navy-900 text-xs md:text-sm font-bold rounded-full transition-colors"
-              >
-                Daftar
-              </button>
-            </form>
+            <a href="mailto:syahgroup09@gmail.com" className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-3 text-xs text-slate-200 transition hover:border-cyan-300/30 hover:bg-white/[0.06]">
+              <Mail size={15} className="text-cyan-300 transition-transform group-hover:scale-110" />
+              syahgroup09@gmail.com
+            </a>
           </div>
 
         </div>

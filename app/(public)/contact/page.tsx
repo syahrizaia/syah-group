@@ -45,7 +45,7 @@ export default function ContactPage() {
           </h1>
           {/* Ukuran subjudul diperkecil menjadi text-base di mobile */}
           <p className="text-base md:text-xl text-silver/80 font-light max-w-2xl">
-            Dari pengadaan alat berat berskala besar, infrastruktur digital, hingga produksi visual kelas komersial. Sampaikan visi Anda, dan tim kami akan merespons.
+            Dari dukungan alat berat dan infrastruktur digital hingga videografi, fotografi, dan editing. Ceritakan kebutuhan bisnis Anda agar kami dapat menghubungkan Anda dengan tim yang tepat.
           </p>
         </motion.div>
 
@@ -68,7 +68,7 @@ export default function ContactPage() {
             <div>
               {/* Ukuran teks atas, jarak margin bawah, dan ikon disesuaikan */}
               <h3 className="text-xs md:text-sm font-bold tracking-[0.2em] text-gold-500 uppercase mb-4 md:mb-6 flex items-center gap-2">
-                <Building2 className="w-4 h-4 md:w-[18px] md:h-[18px]" /> Global Headquarters
+                <Building2 className="w-4 h-4 md:w-[18px] md:h-[18px]" /> Kantor Pusat
               </h3>
               {/* Ukuran font nama gedung disesuaikan */}
               <p className="text-xl md:text-2xl font-display font-medium text-white mb-2 md:mb-4">Syah Tower, SCBD</p>
@@ -130,7 +130,7 @@ export default function ContactPage() {
                       required
                       // Padding (px-4 py-3), kelengkungan sudut, dan ukuran font disesuaikan di mobile
                       className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-4 py-3 md:px-5 md:py-4 text-sm md:text-base text-white placeholder:text-white/20 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 transition-all"
-                      placeholder="John Doe"
+                      placeholder="Nama Anda"
                     />
                   </div>
                   
@@ -141,7 +141,7 @@ export default function ContactPage() {
                       type="text" 
                       id="company"
                       className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-4 py-3 md:px-5 md:py-4 text-sm md:text-base text-white placeholder:text-white/20 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 transition-all"
-                      placeholder="Nama Perusahaan"
+                      placeholder="Nama organisasi Anda"
                     />
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     id="email"
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-4 py-3 md:px-5 md:py-4 text-sm md:text-base text-white placeholder:text-white/20 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 transition-all"
-                    placeholder="john@company.com"
+                    placeholder="nama@perusahaan.co.id"
                   />
                 </div>
 
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     required
                     rows={4}
                     className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-4 py-3 md:px-5 md:py-4 text-sm md:text-base text-white placeholder:text-white/20 focus:outline-none focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 transition-all resize-none"
-                    placeholder="Ceritakan detail proyek atau kebutuhan bisnis Anda di sini..."
+                    placeholder="Ceritakan proyek atau kebutuhan bisnis Anda..."
                   />
                 </div>
 

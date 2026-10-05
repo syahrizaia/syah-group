@@ -21,11 +21,11 @@ const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://syahriza.vercel.app"),
   title: {
-    default: "Syah Group | Building the Future",
+    default: "Syah Group | Tiga Pilar, Satu Ekosistem",
     template: "%s | Syah Group",
   },
-  description: "Holding Company modern yang menaungi berbagai pilar bisnis di bidang Alat Berat, Teknologi Informasi, dan Multimedia.",
-  keywords: ["Syah Group", "Alat Berat", "Teknologi Informasi", "Multimedia", "Perusahaan Indonesia", "Inovasi", "Transformasi Digital"],
+  description: "Syah Group menghubungkan tiga pilar bisnis: alat berat dan industri, software dan teknologi, serta Syah Studio untuk multimedia dan visual.",
+  keywords: ["Syah Group", "Alat Berat", "Teknologi Informasi", "Software", "Multimedia", "Videografi", "Fotografi", "Editing", "Perusahaan Indonesia", "Inovasi"],
   authors: [{ name: "Syahriza", url: "https://syahriza.vercel.app" }],
   icons: {
     icon: "/icon.png",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: "https://syahriza.vercel.app",
     siteName: "Syah Group",
-    title: "Syah Group | Building the Future",
-    description: "Holding Company modern yang menaungi berbagai pilar bisnis di bidang Alat Berat, Teknologi Informasi, dan Multimedia.",
+    title: "Syah Group | Tiga Pilar, Satu Ekosistem",
+    description: "Syah Group menghubungkan tiga pilar bisnis: alat berat dan industri, software dan teknologi, serta Syah Studio untuk multimedia dan visual.",
     images: [
       {
         url: "/icon.png",
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Syah Group | Building the Future",
-    description: "Holding Company modern yang menaungi berbagai pilar bisnis di bidang Alat Berat, Teknologi Informasi, dan Multimedia.",
+    title: "Syah Group | Tiga Pilar, Satu Ekosistem",
+    description: "Syah Group menghubungkan tiga pilar bisnis: alat berat dan industri, software dan teknologi, serta Syah Studio untuk multimedia dan visual.",
     creator: "@syahriza",
     images: ["/icon.png"],
   },
@@ -68,11 +68,11 @@ export default function RootLayout({
     "name": "Syah Group",
     "url": "https://syahriza.vercel.app",
     "logo": "https://syahriza.vercel.app/icon.png",
-    "description": "Holding Company modern yang menaungi berbagai pilar bisnis di bidang Alat Berat, Teknologi Informasi, dan Multimedia."
+    "description": "Syah Group menghubungkan tiga pilar bisnis: alat berat dan industri, software dan teknologi, serta Syah Studio untuk multimedia dan visual."
   };
 
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <script
           type="application/ld+json"

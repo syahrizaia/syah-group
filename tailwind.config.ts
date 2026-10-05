@@ -10,14 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          900: '#0a0f1d',
+          900: '#0a0d14',
           800: '#111827',
         },
         gold: {
-          500: '#d4af37',
-          600: '#aa8c2c',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
         },
-        silver: '#c0c0c0',
+        cyan: { 400: '#22d3ee' },
+        blue: { 500: '#3b82f6' },
+        emerald: { 400: '#34d399' },
+        silver: '#94a3b8',
       },
       fontFamily: {
         sans: ['var(--font-inter)'],

@@ -14,7 +14,7 @@ const policies = [
   {
     icon: <Server className="text-gold-500 w-5 h-5 md:w-6 md:h-6" />,
     title: "2. Penggunaan Informasi Data",
-    content: "Data yang kami kumpulkan digunakan secara eksklusif untuk memproses kebutuhan bisnis Anda, meningkatkan layanan dari ketiga pilar bisnis kami (Syah Heavy Equipment, Syah Tech, Syah Studio), memberikan dukungan klien, serta mengirimkan pembaruan yang relevan. Kami menggunakan analitik data semata-mata untuk mengoptimalkan infrastruktur digital kami."
+    content: "Data yang kami kumpulkan digunakan untuk menanggapi kebutuhan bisnis Anda, meningkatkan layanan dari tiga pilar kami (industri dan alat berat, software dan teknologi, serta Syah Studio di bidang multimedia dan visual), dan memberikan dukungan yang relevan."
   },
   {
     icon: <ShieldCheck className="text-gold-500 w-5 h-5 md:w-6 md:h-6" />,

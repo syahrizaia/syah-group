@@ -1,173 +1,33 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Sparkles, Network, Fingerprint, Rocket, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight, Camera, Cpu, Fingerprint, HardHat, Network, Radio, Workflow } from "lucide-react";
 
-const innovations = [
-  {
-    title: "IoT & Telematika Alat Berat",
-    description: "Sinergi antara Syah Tech dan Syah Heavy Equipment. Kami menanamkan sensor pintar pada setiap mesin untuk memantau performa, memprediksi kerusakan (Predictive Maintenance), dan melacak efisiensi bahan bakar secara real-time.",
-    // Menggunakan class Tailwind responsif untuk ukuran ikon (w-6 h-6 di mobile, w-8 h-8 di desktop)
-    icon: <Network className="text-blue-400 w-6 h-6 md:w-8 md:h-8" />,
-    gradient: "from-blue-500/20 to-transparent",
-  },
-  {
-    title: "Virtual Production & CGI",
-    description: "Menggabungkan daya komputasi Syah Tech dengan kreativitas Syah Studio. Kami membangun infrastruktur server rendering berkecepatan tinggi untuk menghasilkan efek visual dan produksi virtual kelas Hollywood.",
-    icon: <Sparkles className="text-purple-400 w-6 h-6 md:w-8 md:h-8" />,
-    gradient: "from-purple-500/20 to-transparent",
-  },
-  {
-    title: "Infrastruktur Pintar Berkelanjutan",
-    description: "Mempersiapkan masa depan energi dan konstruksi. Riset kami berfokus pada elektrifikasi alat berat dan pusat data ramah lingkungan untuk mengurangi jejak karbon di setiap proyek.",
-    icon: <Fingerprint className="text-gold-500 w-6 h-6 md:w-8 md:h-8" />,
-    gradient: "from-gold-500/20 to-transparent",
-  },
+const focusAreas = [
+  { icon: Network, code: "FIELD / 01", title: "Operasi terhubung", lead: "Teknologi bertemu kebutuhan lapangan.", copy: "Eksplorasi integrasi data operasional, pemantauan peralatan, dan dukungan teknis untuk meningkatkan visibilitas aktivitas industri.", tags: ["Peralatan", "Telematika", "Data operasi"], color: "text-cyan-300", glow: "from-cyan-500/[0.14]" },
+  { icon: Workflow, code: "SYSTEMS / 02", title: "Alur kerja digital", lead: "Proses yang lebih jelas dan terukur.", copy: "Solusi perangkat lunak dan infrastruktur teknologi dapat membantu organisasi menyederhanakan proses dan menghubungkan tim.", tags: ["Perangkat lunak", "Cloud", "Otomasi"], color: "text-blue-300", glow: "from-blue-500/[0.14]" },
+  { icon: Camera, code: "STUDIO / 03", title: "Konten visual bermakna", lead: "Cerita bisnis menjadi pengalaman visual.", copy: "Videografi, fotografi, editing, dan pascaproduksi membantu menerjemahkan ide menjadi konten visual yang kuat dan relevan.", tags: ["Videografi", "Fotografi", "Editing"], color: "text-violet-300", glow: "from-violet-500/[0.14]" },
 ];
 
-const roadmapNodes = [
-  { year: "2026", title: "Integrasi Ekosistem", desc: "Penyatuan data dari ketiga pilar bisnis ke dalam satu platform cloud terpusat." },
-  { year: "2027", title: "Ekspansi AI & Otomatisasi", desc: "Penerapan kecerdasan buatan pada manajemen armada dan post-production otomatis." },
-  { year: "2028", title: "Global R&D Center", desc: "Pembangunan fasilitas riset teknologi dan multimedia berskala internasional." },
-  { year: "2030+", title: "Dominasi Sektor Baru", desc: "Ekspansi portofolio Syah Group ke sektor energi terbarukan dan antariksa." },
+const principles = [
+  { icon: HardHat, title: "Mulai dari lapangan", copy: "Pahami pekerjaan dan tantangan pengguna sebelum menentukan teknologi." },
+  { icon: Cpu, title: "Gunakan teknologi yang tepat", copy: "Pilih sistem yang menyelesaikan kebutuhan dengan jelas dan bertanggung jawab." },
+  { icon: Fingerprint, title: "Rancang agar terhubung", copy: "Pertimbangkan dampak dan integrasi di seluruh ekosistem sejak awal." },
 ];
 
 export default function InnovationPage() {
   return (
-    // Padding utama disesuaikan untuk mobile (pt-24 pb-16)
-    <main className="min-h-screen pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden">
-      
-      {/* 1. Hero Section */}
-      {/* Margin bottom disesuaikan (mb-16 di mobile) */}
-      <section className="relative px-4 md:px-6 max-w-7xl mx-auto mb-16 md:mb-32 text-center">
-        {/* Ornamen Garis Futuristik (Disesuaikan tingginya di mobile) */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-16 md:h-32 bg-gradient-to-b from-transparent via-gold-500 to-transparent opacity-50" />
-        
-        {/* Padding top kontainer disesuaikan */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="max-w-4xl mx-auto pt-10 md:pt-16"
-        >
-          {/* Jarak margin badge diturunkan */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-4 md:mb-6">
-            <Rocket size={14} className="text-gold-500" />
-            <span className="text-[10px] md:text-xs font-bold tracking-widest text-silver uppercase">Research & Development</span>
-          </div>
-          {/* Tipografi judul utama diperkecil menjadi text-3xl di mobile */}
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-bold text-white leading-tight mb-4 md:mb-6">
-            Merancang <span className="inline-block border border-gold-400/40 px-2.5 py-0.5 md:px-4 md:py-1 rounded-xl md:rounded-2xl bg-gold-400/5 text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600 align-middle decoration-clone">Esok Hari,</span> <br /> Hari Ini.
-          </h1>
-          {/* Ukuran deskripsi hero diperkecil menjadi text-base di mobile */}
-          <p className="text-base md:text-xl text-silver/80 font-light leading-relaxed">
-            Inovasi bukanlah departemen di Syah Group, melainkan DNA kami. Kami menolak untuk tetap diam di dunia yang terus bergerak.
-          </p>
-        </motion.div>
+    <main className="min-h-screen overflow-hidden pb-24 pt-28 md:pt-36">
+      <section className="relative px-5 text-center sm:px-8"><div className="absolute left-1/2 top-0 -z-10 h-72 w-[min(90vw,700px)] -translate-x-1/2 rounded-full bg-blue-500/[0.08] blur-[110px]" />
+        <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }} className="mx-auto max-w-4xl"><span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-semibold uppercase tracking-[.18em] text-slate-300"><Radio size={14} className="text-cyan-300" /> Inovasi lintas pilar</span><h1 className="mt-7 font-display text-4xl font-semibold leading-[1.06] tracking-[-.05em] text-white sm:text-6xl md:text-7xl">Solusi dimulai saat<br className="hidden sm:block" /> <span className="bg-gradient-to-r from-cyan-200 via-blue-300 to-slate-400 bg-clip-text text-transparent">berbagai bidang terhubung.</span></h1><p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">Kami melihat inovasi sebagai cara menyatukan kebutuhan industri, sistem digital, dan komunikasi visual menjadi solusi yang lebih utuh.</p></motion.div>
       </section>
 
-      {/* 2. Sinergi Inovasi (Cards) */}
-      {/* Padding & margin bottom disesuaikan */}
-      <section className="px-4 md:px-6 max-w-7xl mx-auto mb-16 md:mb-32">
-        {/* Gap antar grid disesuaikan agar lebih rapat di mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-          {innovations.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-              // Padding (p-6) & kelengkungan sudut (rounded-2xl) disesuaikan untuk mobile
-              className="relative p-6 md:p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-[32px] overflow-hidden group hover:border-white/20 transition-all duration-500"
-            >
-              {/* Background Gradient Hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} />
-              
-              {/* Padding & margin kontainer ikon disesuaikan */}
-              <div className="mb-4 md:mb-6 p-3 md:p-4 bg-navy-900/50 inline-block rounded-xl md:rounded-2xl border border-white/5 shadow-lg">
-                {item.icon}
-              </div>
-              {/* Ukuran text judul kartu diperkecil */}
-              <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-2 md:mb-4">{item.title}</h3>
-              {/* Ukuran deskripsi kartu responsif (text-xs di mobile) */}
-              <p className="text-silver/80 leading-relaxed text-xs md:text-base">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <section className="mx-auto mt-20 max-w-7xl px-5 sm:px-8 lg:mt-28 lg:px-12"><div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-xs font-semibold uppercase tracking-[.2em] text-slate-500">Ruang eksplorasi</p><h2 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">Peluang inovasi ekosistem.</h2></div><p className="max-w-md text-sm leading-6 text-slate-400">Area berikut menggambarkan arah kolaborasi yang dapat dikembangkan sesuai kebutuhan mitra.</p></div><div className="grid gap-4 lg:grid-cols-3">{focusAreas.map(({ icon: Icon, code, title, lead, copy, tags, color, glow }, i) => <motion.article key={code} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ delay: i * .12 }} className="group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#101620] p-6 transition duration-300 hover:-translate-y-1 hover:border-white/20 sm:p-7"><div className={`pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-gradient-to-br ${glow} to-transparent blur-3xl transition group-hover:scale-125`} /><div className="relative flex items-center justify-between"><Icon size={22} className={color} /><span className="text-[10px] tracking-[.16em] text-slate-600">{code}</span></div><h3 className="relative mt-8 font-display text-xl font-semibold text-white">{title}</h3><p className="relative mt-2 text-sm font-medium text-slate-300">{lead}</p><p className="relative mt-3 min-h-[96px] text-sm leading-6 text-slate-400">{copy}</p><div className="relative mt-5 flex flex-wrap gap-2">{tags.map((tag) => <span key={tag} className="rounded-full border border-white/[0.08] bg-white/[0.025] px-2.5 py-1 text-[10px] text-slate-400">{tag}</span>)}</div></motion.article>)}</div></section>
 
-      {/* 3. Peta Jalan Masa Depan (Roadmap Timeline) */}
-      {/* Padding & margin bottom disesuaikan */}
-      <section className="relative px-4 md:px-6 max-w-5xl mx-auto mb-16 md:mb-32 py-10 md:py-20">
-        {/* Jarak margin bawah header timeline diturunkan */}
-        <div className="text-center mb-10 md:mb-20">
-          {/* Ukuran teks judul timeline diperkecil */}
-          <h2 className="text-2xl md:text-5xl font-display font-bold text-white mb-2 md:mb-4">Visi 2030 & Seterusnya</h2>
-          <p className="text-silver/80 text-sm md:text-lg">Cetak biru ekspansi agresif Syah Group.</p>
-        </div>
+      <section className="mt-24 border-y border-white/[0.07] bg-white/[0.015] px-5 py-20 sm:px-8 lg:mt-32 lg:px-12"><div className="mx-auto max-w-7xl"><motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-9 max-w-2xl"><p className="text-xs font-semibold uppercase tracking-[.2em] text-slate-500">Prinsip pengembangan</p><h2 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">Teknologi harus memberi dampak.</h2><p className="mt-4 text-sm leading-6 text-slate-400">Pendekatan yang berangkat dari kebutuhan dan kolaborasi lintas disiplin membantu menjaga inovasi tetap relevan.</p></motion.div><div className="grid gap-3 md:grid-cols-3">{principles.map(({ icon: Icon, title, copy }, i) => <motion.div key={title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .1 }} className="flex gap-4 rounded-2xl border border-white/[0.08] bg-[#101620] p-5"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/[0.08] bg-white/[0.04] text-cyan-200"><Icon size={18} /></span><div><h3 className="text-sm font-semibold text-white">{title}</h3><p className="mt-2 text-xs leading-5 text-slate-400">{copy}</p></div></motion.div>)}</div></div></section>
 
-        <div className="relative border-l border-white/10 ml-2 md:ml-0 md:border-l-0">
-          {/* Garis Tengah untuk Desktop */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2" />
-
-          {/* Jarak vertikal antar node disesuaikan (space-y-10 di mobile) */}
-          <div className="space-y-10 md:space-y-16">
-            {roadmapNodes.map((node, idx) => {
-              const isEven = idx % 2 === 0;
-              return (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6 }}
-                  className={`relative flex flex-col md:flex-row items-start md:items-center ${
-                    isEven ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Titik Node (Lingkaran) */}
-                  <div className="absolute -left-[5px] md:left-1/2 md:-translate-x-1/2 w-[10px] h-[10px] rounded-full bg-gold-500 shadow-[0_0_15px_rgba(212,175,55,0.8)] z-10" />
-                  
-                  {/* Konten Timeline */}
-                  {/* Padding horizontal (pl-6) disesuaikan untuk layar kecil */}
-                  <div className={`pl-6 md:pl-0 w-full md:w-1/2 ${
-                    isEven ? "md:pr-16 text-left md:text-right" : "md:pl-16 text-left"
-                  }`}>
-                    {/* Ukuran teks konten timeline responsif */}
-                    <span className="text-gold-500 font-display font-bold text-lg md:text-xl mb-1 block">{node.year}</span>
-                    <h3 className="text-lg md:text-2xl font-bold text-white mb-1">{node.title}</h3>
-                    <p className="text-silver/80 text-xs md:text-base">{node.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. CTA */}
-      <section className="px-4 md:px-6 max-w-4xl mx-auto text-center pb-6 md:pb-10">
-        {/* Padding dalam border-t disesuaikan */}
-        <div className="p-6 md:p-10 border-t border-white/10">
-          {/* Ukuran teks judul CTA diperkecil */}
-          <h2 className="text-xl md:text-3xl font-display font-bold text-white mb-4 md:mb-6">Jadilah Bagian dari Revolusi Ini</h2>
-          {/* Ukuran teks deskripsi CTA diperkecil */}
-          <p className="text-silver/80 text-xs md:text-base mb-6 md:mb-8 max-w-xl mx-auto">
-            Kami mencari inovator, insinyur, dan kreator visual terbaik untuk bergabung membangun ekosistem teknologi masa depan.
-          </p>
-          {/* Padding & ukuran font tombol disesuaikan */}
-          <Link 
-            href="/careers"
-            className="group inline-flex items-center gap-2 bg-white text-navy-900 font-bold text-xs md:text-base py-3 px-6 md:py-4 md:px-8 rounded-full transition-all duration-300 hover:bg-gold-500 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
-          >
-            Lihat Peluang Karier <ArrowRight className="w-4 h-4 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-      </section>
+      <section className="mx-auto mt-20 max-w-7xl px-5 sm:px-8 lg:mt-28 lg:px-12"><div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#151e2a] to-[#0d121a] p-7 sm:p-10 md:flex md:items-center md:justify-between"><div className="absolute -right-10 -top-28 h-72 w-72 rounded-full bg-cyan-300/[0.07] blur-[90px]" /><div className="relative"><p className="text-xs font-semibold uppercase tracking-[.18em] text-cyan-200">Kolaborasi</p><h2 className="mt-3 font-display text-2xl font-semibold text-white sm:text-3xl">Punya tantangan yang ingin dipecahkan?</h2><p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">Mari mulai dengan memahami kebutuhan Anda dan menemukan kapabilitas grup yang paling sesuai.</p></div><Link href="/contact" className="relative mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0a0d14] transition hover:bg-cyan-100 md:mt-0">Mulai berdiskusi <ArrowRight size={16} /></Link></div></section>
     </main>
   );
 }

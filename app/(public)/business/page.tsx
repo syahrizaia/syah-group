@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HardHat, Cpu, Clapperboard, CheckCircle2, ArrowRight } from "lucide-react";
+import { HardHat, Cpu, Camera, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 // Data Pilar Bisnis
@@ -38,18 +38,18 @@ const businesses = [
     link: "https://syahtech.vercel.app",
   },
   {
-    id: "studio",
+    id: "syah-studio",
     name: "Syah Studio",
     category: "Multimedia & Visual",
-    description: "Mengubah gagasan menjadi mahakarya visual. Studio kami dilengkapi dengan teknologi produksi mutakhir untuk menghasilkan fotografi, videografi, dan efek visual kelas komersial yang memukau audiens Anda.",
+    description: "Mengubah gagasan menjadi cerita visual melalui videografi, fotografi, editing, dan pascaproduksi untuk kebutuhan brand dan bisnis.",
     features: [
-      "Produksi Video Komersial & Company Profile",
-      "Corporate & Product Photography",
-      "Post-Production & Video Editing",
+      "Produksi Videografi & Company Profile",
+      "Fotografi Komersial & Produk",
+      "Editing & Pascaproduksi",
     ],
-    icon: <Clapperboard className="text-purple-400 w-8 h-8 md:w-10 md:h-10" />,
-    color: "from-purple-900/40 to-transparent",
-    imagePlaceholder: "bg-gradient-to-br from-purple-700/20 to-black",
+    icon: <Camera className="text-violet-300 w-8 h-8 md:w-10 md:h-10" />,
+    color: "from-violet-900/40 to-transparent",
+    imagePlaceholder: "bg-gradient-to-br from-violet-700/20 to-black",
     link: "https://syahstudio.vercel.app",
   },
 ];
@@ -78,7 +78,7 @@ export default function BusinessPage() {
           </h2>
           {/* Ukuran subjudul diperkecil menjadi text-base di mobile */}
           <p className="text-base md:text-xl text-silver/80 font-light leading-relaxed">
-            Membangun masa depan melalui dominasi di sektor infrastruktur fisik, inovasi digital, dan kreasi visual.
+            Membangun masa depan melalui sinergi alat berat, teknologi digital, dan kreativitas visual.
           </p>
         </motion.div>
       </section>
@@ -155,8 +155,8 @@ export default function BusinessPage() {
                 {/* Ukuran link interaksi diperkecil */}
                 <Link 
                   href={business.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={business.link.startsWith("http") ? "_blank" : undefined}
+                  rel={business.link.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="group inline-flex items-center gap-2 md:gap-3 text-gold-500 font-bold text-sm md:text-lg hover:text-white transition-colors w-fit"
                 >
                   Pelajari Lebih Lanjut 

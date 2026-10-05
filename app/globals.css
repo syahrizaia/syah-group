@@ -1,30 +1,66 @@
 @import "tailwindcss";
 
-/* Mengatur Tema Kustom untuk Syah Group (Pengganti tailwind.config.ts) */
 @theme {
-  /* Warna Kustom */
   --color-navy-800: #111827;
-  --color-navy-900: #0a0f1d;
-  
-  --color-gold-500: #d4af37;
-  --color-gold-600: #aa8c2c;
-  
-  --color-silver: #c0c0c0;
-
-  /* Font Kustom yang disinkronkan dengan layout.tsx */
+  --color-navy-900: #0a0d14;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  --color-cyan-400: #22d3ee;
+  --color-blue-500: #3b82f6;
+  --color-emerald-400: #34d399;
+  --color-silver: #94a3b8;
   --font-sans: var(--font-inter);
   --font-display: var(--font-syne);
 }
 
-/* Base styling */
 :root {
-  --background: #0a0f1d; /* navy-900 */
-  --foreground: #ffffff;
+  color-scheme: dark;
+  --background: #0a0d14;
+  --foreground: #f8fafc;
+  background: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--background);
+  background: var(--background);
   color: var(--foreground);
-  /* Kita tidak perlu lagi menulis font-family di sini karena 
-     sudah diatur oleh class 'font-sans' di layout.tsx */
+}
+
+@keyframes ecosystem-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes orbit-drift {
+  from { transform: rotate(0deg) translateX(8px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(8px) rotate(-360deg); }
+}
+
+@keyframes light-sweep {
+  0%, 100% { opacity: .28; transform: translateX(-120%); }
+  50% { opacity: .7; transform: translateX(120%); }
+}
+
+.ecosystem-marquee { animation: ecosystem-drift 32s linear infinite; }
+.ecosystem-orbit { animation: orbit-drift 18s linear infinite; }
+.ecosystem-sweep { animation: light-sweep 7s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem-marquee, .ecosystem-orbit, .ecosystem-sweep { animation: none !important; }
+}
+
+::selection {
+  background: rgb(6 182 212 / 28%);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
